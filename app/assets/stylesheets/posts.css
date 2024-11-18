@@ -1,54 +1,85 @@
+/* Estilo general */
+body {
+  padding-top: 56px;
+  background: url('/assets/fondoInts.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+/* Contenedor de las imágenes */
 .images {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* Espacio entre imágenes */
-  }
-  
-  .post-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-  }
-  
-  .no-image {
-    color: #666;
-    font-style: italic;
-  }
-  
-  .post-description {
-    margin: 10px 0;
-    font-size: 1.1em;
-    line-height: 1.5;
-  }
-  
-  .post-links {
-    margin-top: 10px;
-  }
-  
-  .link {
-    margin-right: 10px;
-    text-decoration: none;
-    color: #007bff;
-    transition: color 0.3s;
-  }
-  
-  .link:hover {
-    color: #0056b3; /* Color en hover */
-  }
-  
-  .destroy-link {
-    color: #dc3545; /* Color para el link de eliminar */
-  }
-  
-  .destroy-link:hover {
-    color: #c82333; /* Color en hover para eliminar */
-  }
-  
-  .edit-link {
-    color: #28a745; /* Color para el link de editar */
-  }
-  
-  .edit-link:hover {
-    color: #218838; /* Color en hover para editar */
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espacio entre imágenes */
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semi-transparente */
+  padding: 15px; /* Espacio alrededor de las imágenes */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilo para las imágenes */
+.post-image {
+  width: 150px; /* Tamaño uniforme para todas las imágenes */
+  height: 150px;
+  object-fit: cover; /* Recorta y ajusta la imagen para llenar el contenedor */
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Texto cuando no hay imagen */
+.no-image {
+  color: #666;
+  font-style: italic;
+}
+
+/* Descripción de la publicación */
+.post-description {
+  margin: 10px 0;
+  font-size: 1.1em;
+  line-height: 1.5;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Enlaces de acción debajo de la descripción */
+.post-links {
+  display: flex;
+  gap: 20px; /* Espaciado entre botones */
+  margin-top: 15px;
+  background-color: rgba(0, 0, 0, 0.1); /* Fondo semitransparente */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Estilos para los botones */
+.link, .destroy-link, .edit-link {
+  padding: 8px 15px; /* Espacio dentro de cada botón */
+  text-decoration: none;
+  color: #007bff;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.link:hover {
+  color: #0056b3; /* Color en hover */
+}
+
+/* Estilo de botones para eliminar y editar */
+.destroy-link {
+  color: #ffffff;
+  background-color: #dc3545; /* Color para el botón de eliminar */
+}
+
+.destroy-link:hover {
+  background-color: #c82333; /* Color en hover para eliminar */
+}
+
+.edit-link {
+  color: #ffffff;
+  background-color: #28a745; /* Color para el botón de editar */
+}
+
+.edit-link:hover {
+  background-color: #218838; /* Color en hover para editar */
+}

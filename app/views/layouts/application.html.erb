@@ -12,80 +12,173 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* Estilo general */
-    body {
+/* Estilo general */
+body {
     padding-top: 56px;
-    background-color: #f4f6f9;
-    font-family: Arial, sans-serif;
+     background: url('/assets/fondoInts.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', sans-serif;
     color: #333;
-    }
+}
 
-    /* Navbar elegante */
-    .navbar {
-    background-color: #1a1a1a;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+/* Navbar con diseño moderno */
+.navbar {
+    background-color: rgba(26, 26, 26, 0.8); /* Fondo semi-transparente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
-    .navbar-brand {
+.navbar-brand {
     font-weight: bold;
-    color: #ffffff !important;
-    font-size: 3.00rem;
-    }
+    color: #ffde59 !important; /* Texto amarillo */
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
 
-    .navbar-nav .nav-link {
-    color: #ffffff !important;
-    transition: color 0.3s ease;
-    }
+.navbar-nav .nav-link {
+    color: #000000 !important; /* Texto negro */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
 
-    .navbar-nav .nav-link:hover {
-    color: #ffffff !important;
-    }
+.navbar-nav .nav-link:hover {
+    color: #ffde59 !important; /* Color amarillo en hover */
+    transform: scale(1.05);
+}
 
-    /* Botón Logout estilo enlace */
-    .logout-link {
-    color: #ffffff !important;
+/* Botón Logout estilo enlace */
+.logout-link {
+    color: #000000 !important; /* Texto negro */
     border: none;
     background: none;
     padding: 0;
     font: inherit;
     cursor: pointer;
     outline: inherit;
-    }
+    transition: color 0.3s ease;
+}
 
-    /* Alertas */
-    .alert {
-    border-radius: 0.25rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.logout-link:hover {
+    color: #ff6b6b !important; /* Color rojo en hover */
+}
+
+/* Alertas */
+.alert {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-weight: 500;
-    }
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco */
+    color: #000000; /* Texto negro */
+}
 
-    .alert .close {
+.alert .close {
     color: #333;
-    }
+    opacity: 0.7;
+}
 
-    /* Contenedor de contenido */
-    .container {
+.alert .close:hover {
+    opacity: 1;
+}
+
+/* Contenedor de contenido */
+.container {
     max-width: 800px;
-    }
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #ffde59; /* Texto amarillo */
+}
 
-    .text-center {
+/* Texto centrado */
+.text-center {
     margin-top: 2rem;
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #000000; /* Texto negro */
+}
 
-    /* Estilos responsivos */
-    @media (max-width: 576px) {
+/* Estilos de imágenes y botones */
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espacio entre imágenes */
+}
+
+.post-image {
+    width: 150px; /* Tamaño uniforme para todas las imágenes */
+    height: 150px;
+    object-fit: cover; /* Recorta y ajusta la imagen para llenar el contenedor */
+    border-radius: 4px;
+}
+
+/* Descripción de las publicaciones */
+.post-description {
+    margin: 10px 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+/* Enlaces de acción debajo de la descripción de la publicación */
+.post-links {
+    display: flex;
+    gap: 20px; /* Aumenta el espaciado entre botones */
+    margin-top: 10px;
+}
+
+.link, .destroy-link, .edit-link {
+    padding: 8px 15px; /* Espacio dentro de cada botón */
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo de botones para eliminar y editar */
+.destroy-link {
+    color: #ffffff;
+    background-color: #dc3545; /* Color para el botón de eliminar */
+}
+
+.destroy-link:hover {
+    background-color: #c82333; /* Color en hover para eliminar */
+}
+
+.edit-link {
+    color: #ffffff;
+    background-color: #28a745; /* Color para el botón de editar */
+}
+
+.edit-link:hover {
+    background-color: #218838; /* Color en hover para editar */
+}
+
+/* Estilos de los botones en fila */
+.post-links a {
+    margin-right: 10px; /* Espacio entre los botones */
+    display: inline-block; /* Asegura que los botones estén en fila */
+}
+
+/* Estilos responsivos */
+@media (max-width: 576px) {
     .navbar-brand {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .container {
         padding: 1rem;
     }
+
+    .images {
+        flex-direction: column; /* Muestra las imágenes en columna en pantallas pequeñas */
     }
+
+    .post-links {
+        flex-direction: column; /* Los botones se apilan verticalmente en pantallas pequeñas */
+    }
+}
+
+
     </style>
     
 </head>
