@@ -11,42 +11,89 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
+<style>
 /* Estilo general */
 body {
+    margin: 0;
     padding-top: 56px;
-     background: url('/assets/fondoInts.jpg') no-repeat center center fixed;
+    background: linear-gradient(180deg, #7f1d1d, #1d3557, #2a9d8f, #e76f51);
     background-size: cover;
     font-family: 'Segoe UI', sans-serif;
     color: #333;
+    line-height: 1.6;
 }
 
-/* Navbar con diseño moderno */
+/* Contenedor de contenido (fondo y efectos) */
+.container {
+    max-width: 900px;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(120deg, #1d3557, #2a9d8f, #e76f51);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* Estilos de las secciones (Descripción y Correo) */
+.description, .email {
+    background-color: #ffffff;
+    color: #333;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la descripción de publicaciones */
+.post-description {
+    margin: 15px 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.8;
+    background-color: #ffffff;
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Correo Electrónico */
+.email {
+    background-color: #ffffff;
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar con gradiente y sombreado */
 .navbar {
-    background-color: rgba(26, 26, 26, 0.8); /* Fondo semi-transparente */
+    background: linear-gradient(90deg, #7f1d1d, #1d3557, #2a9d8f, #e76f51);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-brand {
     font-weight: bold;
-    color: #ffde59 !important; /* Texto amarillo */
+    color: #ffffff !important;
     font-size: 2.5rem;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .navbar-nav .nav-link {
-    color: #000000 !important; /* Texto negro */
+    color: #ffffff !important;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover {
-    color: #ffde59 !important; /* Color amarillo en hover */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: #000000 !important;
     transform: scale(1.05);
 }
 
-/* Botón Logout estilo enlace */
+/* Estilo para botones con efecto suave */
 .logout-link {
-    color: #000000 !important; /* Texto negro */
+    color: #ffffff !important;
     border: none;
     background: none;
     padding: 0;
@@ -57,109 +104,73 @@ body {
 }
 
 .logout-link:hover {
-    color: #ff6b6b !important; /* Color rojo en hover */
+    color: #000000 !important;
 }
 
-/* Alertas */
-.alert {
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-weight: 500;
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco */
-    color: #000000; /* Texto negro */
-}
-
-.alert .close {
-    color: #333;
-    opacity: 0.7;
-}
-
-.alert .close:hover {
-    opacity: 1;
-}
-
-/* Contenedor de contenido */
-.container {
-    max-width: 800px;
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    color: #ffde59; /* Texto amarillo */
-}
-
-/* Texto centrado */
-.text-center {
-    margin-top: 2rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    color: #000000; /* Texto negro */
-}
-
-/* Estilos de imágenes y botones */
-.images {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* Espacio entre imágenes */
-}
-
-.post-image {
-    width: 150px; /* Tamaño uniforme para todas las imágenes */
-    height: 150px;
-    object-fit: cover; /* Recorta y ajusta la imagen para llenar el contenedor */
-    border-radius: 4px;
-}
-
-/* Descripción de las publicaciones */
-.post-description {
-    margin: 10px 0;
-    font-size: 1.1em;
-    line-height: 1.5;
-}
-
-/* Enlaces de acción debajo de la descripción de la publicación */
-.post-links {
-    display: flex;
-    gap: 20px; /* Aumenta el espaciado entre botones */
-    margin-top: 10px;
-}
-
-.link, .destroy-link, .edit-link {
-    padding: 8px 15px; /* Espacio dentro de cada botón */
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Estilo de botones para eliminar y editar */
+/* Botones con gradiente */
 .destroy-link {
     color: #ffffff;
-    background-color: #dc3545; /* Color para el botón de eliminar */
+    background: linear-gradient(90deg, #7f1d1d, #e76f51);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
 }
 
 .destroy-link:hover {
-    background-color: #c82333; /* Color en hover para eliminar */
+    background: linear-gradient(90deg, #e76f51, #7f1d1d);
+    color: #000000;
 }
 
 .edit-link {
     color: #ffffff;
-    background-color: #28a745; /* Color para el botón de editar */
+    background: linear-gradient(90deg, #2a9d8f, #1d3557);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
 }
 
 .edit-link:hover {
-    background-color: #218838; /* Color en hover para editar */
+    background: linear-gradient(90deg, #1d3557, #2a9d8f);
+    color: #000000;
 }
 
-/* Estilos de los botones en fila */
-.post-links a {
-    margin-right: 10px; /* Espacio entre los botones */
-    display: inline-block; /* Asegura que los botones estén en fila */
+/* Estilo para las imágenes (disposición y tamaño) */
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.post-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #7f1d1d, #1d3557);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilos responsivos */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    .images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .post-links {
+        flex-direction: column;
+    }
+}
+
 @media (max-width: 576px) {
     .navbar-brand {
         font-size: 1.5rem;
@@ -170,16 +181,16 @@ body {
     }
 
     .images {
-        flex-direction: column; /* Muestra las imágenes en columna en pantallas pequeñas */
+        flex-direction: column;
     }
 
     .post-links {
-        flex-direction: column; /* Los botones se apilan verticalmente en pantallas pequeñas */
+        flex-direction: column;
     }
 }
 
+</style>
 
-    </style>
     
 </head>
 <body>
